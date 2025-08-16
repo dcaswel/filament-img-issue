@@ -5,7 +5,6 @@ namespace App\Filament\Resources\Books\Schemas;
 use Filament\Infolists\Components\ImageEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Schema;
-use Storage;
 
 class BookInfolist
 {
@@ -13,7 +12,7 @@ class BookInfolist
     {
         return $schema
             ->components([
-                ImageEntry::make('cover')->defaultImageUrl(Storage::url('DefaultCover.png')),
+                ImageEntry::make('cover')->defaultImageUrl(asset('images/DefaultCover.png')),
                 TextEntry::make('title'),
             ]);
     }
